@@ -1,0 +1,204 @@
+/*? Logo do Home ?*/
+.logo-main{
+    width: 100%;
+    height: 130px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-main a{
+    display: block;
+
+    width: 150px;
+    height: auto;
+}
+
+/*? Conteudo principal ?*/
+.contain-main{
+    width: 100%;
+    min-height: 550px;
+    height: auto;
+
+    padding: 30px 0;
+
+    display: flex;
+    justify-content: space-between;
+}
+.contain-main > div{
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*** Formulario de confirmação ***/
+.contain-main .conf-presence .contain-form{
+    min-width: 450px;
+
+    padding: 30px 20px;
+
+    border-radius: 5px 15px 5px;
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, 
+                rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.contain-main .conf-presence .contain-form h2{
+    font-size: var(--font-title-01);
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    margin-bottom: 35px;
+}
+
+.contain-main .conf-presence .contain-form .form-box-single-inputs{
+    margin-bottom: 10px;
+}
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq{
+    position: relative;
+
+    width: 100%;
+    height: 60px;
+    
+    padding: 0 15px;
+    margin-bottom: 35px;
+    
+    border-radius: 8px;
+    border: 1px solid var(--color-grey);
+
+    display: flex;
+    align-items: center;
+}
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq label{
+    cursor: text;
+}
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq .label-info{
+    position: absolute;
+    top: -10px;
+    left: 15px;
+
+    padding: 0 5px;
+
+    background-color: var(--color-black);
+
+    font-size: var(--font-subject-01);
+    color: var(--color-white-two);
+
+    border-radius: 8px;
+}
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq .label-info span{
+    color: var(--alert-03-error);
+}
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq .label-icon{
+    padding: 0 15px 0 5px;
+
+    border-right: 1px solid var(--color-grey);
+
+    font-size: var(--font-title-02);
+    color: var(--color-white-two);
+}
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq input{
+    width: 100%;
+
+    padding-left: 15px;
+
+    background-color: transparent;
+
+    font-size: var(--font-text-normal);
+    color: var(--color-white-one);
+}
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq input::placeholder{
+    transition: all .2s ease;
+    -webkit-transition: all .2s ease;
+}
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq input:focus::placeholder{
+    opacity: 0;
+}
+
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq .icon-input-attention{
+    position: absolute;
+    bottom: -23px;
+    left: 15px;
+
+    opacity: 0;
+
+    display: flex;
+
+    font-size: var(--font-subject-02);
+}
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq .icon-input-attention div{
+    margin-left: 10px;
+}
+
+/*** Valid Inputs ***/
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.attention .icon-input-attention,
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.error .icon-input-attention{
+    opacity: 1;
+}
+
+/*! Focus !*/
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.focus{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    border-color: var(--alert-01-primary);
+}
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.focus .label-icon{
+    color: var(--color-white-one);
+
+    border-color: var(--alert-01-primary);
+}
+
+/*! Success !*/
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.success,
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.success .label-icon{
+    border-color: var(--alert-04-success);
+}
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.success .label-icon{
+    color: var(--alert-04-success);
+}
+
+/*! Error !*/
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.error,
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.error .label-icon{
+    border-color: var(--alert-03-error);
+}
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.error label,
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.error .icon-input-attention{
+    color: var(--alert-03-error);
+}
+/*! Attention !*/
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.attention,
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.attention .label-icon{
+    border-color: var(--alert-02-attention);
+}
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.attention .label-icon,
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.attention .icon-input-attention{
+    color: var(--alert-02-attention);
+}
+
+
+.contain-main .conf-presence .contain-form .btn-submit{
+    width: 100%;
+
+    display: flex;
+    justify-content: end;
+
+    margin-top: 10px;
+}
+.contain-main .conf-presence .contain-form .btn-submit button{
+    padding: 10px 20px;
+
+    border-radius: 5px 15px 5px 15px;
+
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, 
+                rgba(0, 0, 0, 0.07) 0px 2px 2px, 
+                rgba(0, 0, 0, 0.07) 0px 4px 4px, 
+                rgba(0, 0, 0, 0.07) 0px 8px 8px, 
+                rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+.contain-main .conf-presence .contain-form .btn-submit button:hover{
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+}

@@ -1,0 +1,106 @@
+<section class="section-home">
+    <div class="logo-main border-red">
+        <h1>
+            <a href="/" class="border-red">
+                <img src="" alt="Logo do Site" class="logo-img">
+            </a>
+        </h1>
+    </div>
+    <div class="contain-main">
+        <div class="slogan border-red"></div>
+        <div class="conf-presence">
+            <div class="contain-form">
+                <h2>Confirme sua Presença</h2>
+                <form action="" method="POST">
+                    <div class="form-box-single-inputs">
+                        <div class="box-form-uniq transition focus">
+                            <label for="nome" class="label-info transition user-select-none">Nome: <span>*</span></label>
+                            <label for="nome" class="label-icon transition user-select-none"><i class="bi bi-person"></i></label>
+                            <input 
+                                type="text" 
+                                id="nome" 
+                                placeholder="Nome Sobrenome" 
+                                class="transition"
+                                name="nome"
+                                valid-name="nome"
+                                not-null
+                                autocomplete="off"
+                                required
+                                permission_alter="1"
+                            >
+                            <div class="icon-input-attention transition">
+                                <i class="bi-exclamation-circle"></i>
+                                <div class="aviso-input user-select-none"></div>
+                            </div>
+                        </div><!-- Campo de input -->
+                        <div class="box-form-uniq success">
+                            <label for="email" class="label-info transition user-select-none">E-mail: <span>*</span></label>
+                            <label for="email" class="label-icon transition user-select-none"><i class="bi bi-envelope"></i></label>
+                            <input 
+                                type="text" 
+                                id="email" 
+                                placeholder="seu@email.com" 
+                                class="transition"
+                                name="email"
+                                valid-contato="email"
+                                not-null
+                                autocomplete="off"
+                                required
+                                permission_alter="1"
+                            >
+                            <div class="icon-input-attention transition">
+                                <i class="bi-exclamation-circle"></i>
+                                <div class="aviso-input user-select-none"></div>
+                            </div>
+                        </div><!-- Campo de input -->
+                        <div class="box-form-uniq error">
+                            <label for="telefone" class="label-info transition user-select-none">Telefone: <span>*</span></label>
+                            <label for="telefone" class="label-icon transition user-select-none"><i class="bi bi-whatsapp"></i></label>
+                            <input 
+                                type="text" 
+                                id="telefone" 
+                                placeholder="(99) 99999-9999" 
+                                mask_number="celular"
+                                class="transition"
+                                name="telefone"
+                                valid-contato="celular"
+                                not-null
+                                autocomplete="off"
+                                required
+                                permission_alter="1"
+                            >
+                            <div class="icon-input-attention transition">
+                                <i class="bi-exclamation-circle"></i>
+                                <div class="aviso-input user-select-none">DDD inexistente</div>
+                            </div>
+                        </div><!-- Campo de input -->
+                        <div class="box-form-uniq attention">
+                            <label for="igreja" class="label-info transition user-select-none">Sua Igreja:</label>
+                            <label for="igreja" class="label-icon transition user-select-none"><i class="bi bi-house-door"></i></label>
+                            <input 
+                                type="text" 
+                                id="igreja" 
+                                placeholder="Nome Sobrenome" 
+                                class="transition"
+                                name="igreja"
+                                autocomplete="off"
+                                required
+                                permission_alter="1"
+                            >
+                            <div class="icon-input-attention transition">
+                                <i class="bi-exclamation-circle"></i>
+                                <div class="aviso-input user-select-none"></div>
+                            </div>
+                        </div><!-- Campo de input -->
+                    </div>
+
+                    <div class="btn-submit w100 display-flex justify-end marg-t-10">
+                        <button type="submit" permission_alter="1" class="cursor-pointer transition" name="alterar">
+                            <i class="bi bi-arrow-repeat"></i> <span>Confirmar presença</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section><!-- Section Home -->
