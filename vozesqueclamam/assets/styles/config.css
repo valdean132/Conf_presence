@@ -5,13 +5,12 @@
 :root {
     /*? ** Colors ** ?*/
     /*! Main !*/
-    --color-blood-red: #700401;
-    --color-rufous: #9f0302;
+    --color-oranje: #c28400;
     --color-sonic-silver: #737174;
     --color-grey: #4b4e58;
-    --color-black: #1f1d1d;
+    --color-black: #2d2d2d;
     --color-black-two: #151b28;
-    --color-white-one: #ffffff;
+    --color-white-one: #ebebeb;
     --color-white-two: #aba8bb;
     
     /*! Color Opacity !*/
@@ -113,14 +112,14 @@ body {
 ::-webkit-scrollbar-thumb {
     width: 100%;
 
-    background-color: var(--color-blood-red);
+    background-color: var(--color-oranje);
 
     border-radius: 8px;
 }
 
 * {
     scrollbar-width: thin;
-    scrollbar-color: var(--color-blood-red) transparent;
+    scrollbar-color: var(--color-oranje) transparent;
 }
 
 /*! Transição !*/
@@ -161,7 +160,7 @@ body {
     overflow-x: hidden;
 
     scrollbar-width: thin;
-    scrollbar-color: var(--color-blood-red) transparent;
+    scrollbar-color: var(--color-oranje) transparent;
 }
 .scrollbar-main::-webkit-scrollbar{
     width: 5px;
@@ -172,7 +171,7 @@ body {
     overflow-x: hidden;
 
     scrollbar-width: thin;
-    scrollbar-color: var(--color-blood-red) transparent;
+    scrollbar-color: var(--color-oranje) transparent;
 }
 .scrollbar-y::-webkit-scrollbar{
     width: 3px;

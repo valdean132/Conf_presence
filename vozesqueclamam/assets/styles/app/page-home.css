@@ -13,17 +13,25 @@
     width: 150px;
     height: auto;
 }
+.logo-main a img{
+    width: 100%;
+}
 
 /*? Conteudo principal ?*/
 .contain-main{
     width: 100%;
-    min-height: 550px;
+    min-height: calc(100vh - 130px);
     height: auto;
 
-    padding: 30px 0;
+    padding-bottom: 15px;
 
     display: flex;
     justify-content: space-between;
+
+    background: linear-gradient(15deg, transparent 0%, var(--color-black) 60%), url('../../images/BG.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
 }
 .contain-main > div{
     width: 50%;
@@ -32,15 +40,73 @@
     justify-content: center;
     align-items: center;
 }
+/*** Conteudo com infomrações ***/
+.contain-main .slogan{
+    flex-direction: column;
+
+    
+}
+.contain-main .slogan .img-banner{
+    width: 100%;
+    height: 365%;
+
+    background-image: url('../../images/image_2.png');
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+}
+
+
+.contain-main .slogan .info{
+    width: 100%;
+
+    padding: 0 2% 2%;
+}
+.contain-main .slogan .info .info-wrapper div{
+    text-align: center;
+    font-weight: 700;
+    font-size: var(--font-title-02);
+    color: var(--color-white-one);
+}
+.contain-main .slogan .info .info-wrapper div span{
+    color: var(--color-oranje);
+}
+
+.contain-main .slogan .info .contact{
+    margin-top: 15px;
+    
+    text-align: center;
+}
+.contain-main .slogan .info .contact a{
+    font-size: var(--font-title-01);
+    color: var(--color-oranje);
+}
+.contain-main .slogan .info .contact a:nth-child(2n + 1){
+    margin-right: 10px;
+}
+.contain-main .slogan .info .contact a:hover{
+    color: var(--alert-01-primary);
+}
+
+
+.contain-main .conf-presence .aviso-esgotado.show,
+.contain-main .conf-presence .contain-form.show{
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
 
 /*** Formulario de confirmação ***/
 .contain-main .conf-presence .contain-form{
     min-width: 450px;
 
+    transform: scale(1);
+    -webkit-transform: scale(1);
+
     padding: 30px 20px;
 
     border-radius: 5px 15px 5px;
 
+    background-color: var(--color-black);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, 
                 rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
@@ -49,6 +115,7 @@
     text-align: center;
     font-weight: 600;
     text-transform: uppercase;
+    color: var(--color-oranje);
 
     margin-bottom: 35px;
 }
@@ -177,6 +244,20 @@
 .contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.attention .icon-input-attention{
     color: var(--alert-02-attention);
 }
+/*! Disabled !*/
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.disabled,
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.disabled label,
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.disabled input{
+    cursor: no-drop;
+}
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.disabled{
+    background-color: var(--color-grey-p-2);
+
+}
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.disabled label,
+.contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq.disabled input{
+    color: var(--color-sonic-silver);
+}
 
 
 .contain-main .conf-presence .contain-form .btn-submit{
@@ -192,6 +273,9 @@
 
     border-radius: 5px 15px 5px 15px;
 
+    background: var(--color-oranje);
+    color: var(--color-white-one);
+
     box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, 
                 rgba(0, 0, 0, 0.07) 0px 2px 2px, 
                 rgba(0, 0, 0, 0.07) 0px 4px 4px, 
@@ -201,4 +285,65 @@
 .contain-main .conf-presence .contain-form .btn-submit button:hover{
     transform: scale(1.02);
     -webkit-transform: scale(1.02);
+}
+
+.contain-main .conf-presence .contain-form .btn-submit button:disabled{
+    background-color: var(--color-grey-p-2);
+    color: var(--color-sonic-silver);
+
+    cursor: no-drop;
+}
+
+/*** Aviso de Esgotado ***/
+.contain-main .conf-presence .aviso-esgotado{
+    min-width: 450px;
+
+    transform: scale(1);
+    -webkit-transform: scale(1);
+
+    padding: 30px 20px;
+
+    border-radius: 5px 15px 5px;
+
+    background-color: var(--color-black);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, 
+                rgba(0, 0, 0, 0.22) 0px 10px 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contain-main .conf-presence .aviso-esgotado .icon-aviso{
+    font-size: 4rem;
+    color: var(--color-oranje);
+
+    margin-bottom: 10px;
+}
+.contain-main .conf-presence .aviso-esgotado .aviso-msg{
+    text-align: center;
+    font-weight: 500;
+    font-size: var(--font-title-02);
+    text-transform: uppercase;
+    color: var(--color-white-one);
+
+    margin-bottom: 15px;
+}
+.contain-main .conf-presence .aviso-esgotado .aviso-msg h4{
+    text-transform: initial;
+    font-size: var(--font-text-normal);
+    color: var(--color-white-two);
+}
+.contain-main .conf-presence .aviso-esgotado .aviso-contat{
+    font-size: var(--font-subject-01);
+    color: var(--color-oranje);
+
+    text-align: center;
+}
+.contain-main .conf-presence .aviso-esgotado .aviso-contat a{
+    font-size: var(--font-title-01);
+    color: var(--color-oranje);
+}
+.contain-main .conf-presence .aviso-esgotado .aviso-contat a:hover{
+    color: var(--alert-01-primary);
 }

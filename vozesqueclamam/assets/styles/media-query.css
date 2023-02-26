@@ -1,0 +1,59 @@
+@media screen and (max-width: 1250px) { /*** Tela com 1250 de largura ***/
+    .contain-main .conf-presence{
+        padding: 0 2%;
+    }
+    .contain-main .conf-presence .aviso-esgotado{
+        min-width: 100%;
+    }
+}
+@media screen and (max-width: 970px) { /*** Tela com 970 de largura ***/
+    .contain-main .conf-presence .contain-form,
+    .contain-main .conf-presence .aviso-esgotado{
+        min-width: 100%;
+    }
+}
+@media screen and (max-width: 768px) { /*** Tela com 768 de largura ***/
+    .contain-main{
+        flex-direction: column;
+        justify-content: flex-start;
+
+        background: linear-gradient(5deg, transparent 0%, var(--color-black) 60%), url('../images/BG.png');
+    }
+    .contain-main > div{
+        width: 100%;
+    }
+
+    .contain-main .slogan .img-banner{
+        display: none;
+    }
+
+    .contain-main .conf-presence .contain-form,
+    .contain-main .conf-presence .aviso-esgotado{
+        min-width: 450px;
+    }
+}
+
+@media screen and (max-width: 600px) { /*** Tela com 600 de largura ***/
+    :root{
+        font-size: 90%;
+    }
+}
+
+@media screen and (max-width: 480px) { /*** Tela com 480 de largura ***/
+    .contain-main .conf-presence{
+        padding: 0 2% 2%;
+    }
+    .contain-main .conf-presence .contain-form,
+    .contain-main .conf-presence .aviso-esgotado{
+        min-width: 100%;
+    }
+    .contain-main .conf-presence .contain-form .form-box-single-inputs .box-form-uniq{
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 320px) { /*** Tela com 320 de largura ***/
+    :root{
+        font-size: 80%;
+    }
+}

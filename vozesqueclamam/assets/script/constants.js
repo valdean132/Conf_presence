@@ -142,8 +142,6 @@ const debounce = function(func, wait, immediate){
 const pegaPagina = pagina => {
     // Separando Link
     pagina = pagina.split(include_path);
-
-    console.log(pagina)
     
     // Retornando nome da Página Atual
     return pagina[pagina.length - 1];
@@ -303,6 +301,7 @@ const avisoInputs = (boo, boxInput, type, msg) => {
     // boxInput.removeClass(type);
     boxInput.removeClass('disabled');
     boxInput.removeClass('error');
+    boxInput.removeClass('attention');
     boxInput.removeClass('success');
     boxInput.find('.icon-input-attention .aviso-input').text('');
 
@@ -375,7 +374,7 @@ const semRepeticao = (value) => {
 /* Validação de Formulário */
 const validateInput = (inputThis, boxInputThis, valueInput, adcional = null) => {
     if(valueInput == ''){ // Verificando se o campo está vazio
-        avisoInputs(true, boxInputThis, 'attention', 'Preencha este campo.');
+        avisoInputs(true, boxInputThis, 'error', 'Preencha este campo.');
         return true;
     }
     if(inputThis.attr('valid-name')){ // Verificando Nome
