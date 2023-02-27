@@ -1,0 +1,134 @@
+/*? Área de menu do profile ?*/
+/*** Imagem de perfil do usuário ***/
+section.profile .main-profile .image-profile-user{
+    height: 315px;
+    max-height: 100%;
+}
+section.profile .main-profile .image-profile-user .photo-box-whapper{
+    width: 60%;
+    height: 70%;
+}
+section.profile .main-profile .image-profile-user .photo-box-whapper .alter-photo-perfil{
+    background-color: #000;
+    
+    z-index: 2;
+}
+section.profile .main-profile .image-profile-user .photo-box-whapper.dropFile .alter-photo-perfil,
+section.profile .main-profile .image-profile-user .photo-box-whapper:hover .alter-photo-perfil{
+    opacity: .7;
+}
+section.profile .main-profile .image-profile-user .photo-box-whapper .alter-photo-perfil .alter-photo-info i{
+    font-size: 2rem;
+    color: var(--text-black-700);
+}
+section.profile .main-profile .image-profile-user .photo-box-whapper .alter-photo-perfil .alter-photo-info p{
+    font-size: .9rem;
+    color: var(--text-black-700);
+    line-height: 15px;
+}
+
+section.profile .main-profile .image-profile-user .photo-box-whapper .avatar-usuario{
+    background-image: url('../images/avatar.svg');
+    background-size: auto 75%;
+}
+section.profile .main-profile .image-profile-user .photo-box-whapper:hover .imagem-usuario{
+    background-size: 110%;
+    background-position: 50% 40%;
+}
+
+/*** Navegação do usuário ***/
+section.profile .main-profile .navegacao-profile{
+    height: calc(100% - 315px);
+}
+section.profile .main-profile .navegacao-profile li{
+    height: 70px;
+}
+section.profile .main-profile .navegacao-profile li:not(:last-child){
+    margin-bottom: 5px;
+}
+section.profile .main-profile .navegacao-profile li a{
+    color: var(--text-black-900);
+    font-size: 1.2rem;
+}
+section.profile .main-profile .navegacao-profile li a::before,
+section.profile .main-profile .navegacao-profile li a::after{
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+
+    transition: all .3s ease;
+}
+section.profile .main-profile .navegacao-profile li a::before{
+    width: 5px;
+    height: 0;
+
+    z-index: 2;
+
+    background-color: var(--skin-color);
+
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+section.profile .main-profile .navegacao-profile li a::after{
+    width: 0;
+    height: 100%;
+
+    background-color: var(--bg-black-50);
+}
+section.profile .main-profile .navegacao-profile li.active a::before,
+section.profile .main-profile .navegacao-profile li:hover a::before{
+    height: 100%;
+}
+section.profile .main-profile .navegacao-profile li.active a::after,
+section.profile .main-profile .navegacao-profile li:hover a::after{
+    width: 100%;
+}
+
+
+section.profile .main-profile .navegacao-profile li a i,
+section.profile .main-profile .navegacao-profile li a span{
+    z-index: 2;
+}
+section.profile .main-profile .navegacao-profile li a i{
+    color: var(--text-black-700);
+}
+section.profile .main-profile .navegacao-profile li.active a i,
+section.profile .main-profile .navegacao-profile li:hover a i{
+    color: var(--text-black-900);
+}
+
+/*? Área do Formulário do profile ?*/
+/*** Infomrações para senha ***/
+section.profile .main-profile .form-profile .form-profile-main .infoPassword .tetle-inform-password{
+    font-size: .9rem;
+    font-family: 500;
+    color: var(--text-black-700);
+}
+section.profile .main-profile .form-profile .form-profile-main .infoPassword .tetle-inform-password i{
+    font-size: 1rem;
+
+    margin-right: 5px;
+}
+section.profile .main-profile .form-profile .form-profile-main .infoPassword .info-box-password .info-password-whapper{
+    font-size: .8rem;
+    color: var(--alert-03);
+}
+section.profile .main-profile .form-profile .form-profile-main .infoPassword .info-box-password .info-password-whapper i{
+    font-size: 1.1rem;
+
+    margin-right: 5px;
+}
+section.profile .main-profile .form-profile .form-profile-main .infoPassword .info-box-password .info-password-whapper i::before{
+    content: '\F135';
+}
+
+section.profile .main-profile .form-profile .form-profile-main .infoPassword .info-box-password .info-password-whapper.success{
+    color: var(--alert-04);
+}
+section.profile .main-profile .form-profile .form-profile-main .infoPassword .info-box-password .info-password-whapper.success i::before{
+    content: '\F26F';
+}

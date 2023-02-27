@@ -1,0 +1,107 @@
+/*? Contenção de tabela ?*/
+.contain-table{
+    padding-bottom: 10px;
+}
+
+/*? Geral ?*/
+.btn-action-table{
+    width: 40px;
+    height: 40px;
+
+    color: var(--text-black-100) !important;
+    font-size: 1.4rem !important;
+}
+.btn-action-table.view{ background-color: var(--alert-01); }
+.btn-action-table.remove{ background-color: var(--alert-03); }
+.btn-action-table.confirme{ background-color: var(--alert-04); }
+
+.btn-action-table:not(:last-child){
+    margin-right: 10px;
+}
+.btn-action-table:hover{
+    transform: scale(1.1);
+}
+
+/*! Modelo de Tabela 01 !*/
+.m-table-01{
+    min-width: 1100px;
+}
+
+.m-table-01 .col-0{ width: 40%; }
+.m-table-01 .col-1{ width: 35%; }
+.m-table-01 .col-2{ width: 25%; }
+.m-table-01 .col-3{ width: 20%; }
+.m-table-01 .col-4{ width: 15%; }
+.m-table-01 .col-5{ width: 10%; }
+
+/*? THead ?*/
+.m-table-01 .thead .th{
+    color: var(--text-black-100);
+    font-weight: 500;
+}
+
+/*? TBody ?*/
+.m-table-01 .tbody{
+    min-height: 70px;
+}
+.m-table-01 .tbody .no_result > p{ /* Caso a tabela esteja vazia */
+    width: 100%;
+
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--text-black-700);
+
+}
+.m-table-01 .tbody .tr:not(:last-child){
+    border-bottom: 1px solid #55586470;
+}
+.m-table-01 .tbody .td{
+    color: var(--text-black-900);
+    font-size: .9rem;
+}
+.m-table-01 .tbody .td a{
+    color: var(--alert-01);
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.m-table-01 .tbody .td a:hover{
+    text-decoration: revert;
+}
+.m-table-01 .tbody .td p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.m-table-01 .tbody .td .inicial-nome{
+    width: 40px;
+    height: 40px;
+
+    background-color: var(--skin-color);
+    border-radius: 50%;
+
+    font-size: 1.5rem;
+    color: var(--bg-black-50);
+    font-weight: 600;
+    text-transform: capitalize;
+
+    margin-right: 10px;
+}
+.m-table-01 .tbody .td .nome p{
+    max-width: 300px;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.m-table-01 .tbody .td .nome p:first-child{
+    text-transform: capitalize;
+}
+.m-table-01 .tbody .td .nome p:last-child{
+    font-size: .7rem;
+    color: var(--text-black-700);
+    font-weight: 300;
+}
+
+/*! Modelo de Tabela 02 !*/

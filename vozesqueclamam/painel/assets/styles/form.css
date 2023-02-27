@@ -1,0 +1,208 @@
+/*! Config form !*/
+.fw-100{ width: 100%; }
+.fw-50{ width: 47%; }
+.fw-33{ width: 30%; }
+
+/*? Titulo do formulário ?*/
+.title-form{
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text-black-900);
+}
+
+/*? Formulário ?*/
+.box-form-uniq{
+    min-height: 105px;
+}
+.box-form-uniq-02{
+    min-height: 80px;
+}
+/*** Titulo dos inputs ***/
+.box-form-uniq label{
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-black-700);
+
+    cursor: text;
+
+}
+.box-form-uniq label span{
+    color: var(--alert-03);
+    font-weight: 500;
+}
+
+/*** Inputs Gerais ***/
+.box-form-uniq input,
+.box-form-uniq textarea,
+.box-form-uniq select,
+.box-form-uniq div.textarea{
+    font-size: 1.1rem;
+    color: var(--text-black-900);
+    font-weight: 300;
+    
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    border-radius: 7px;
+}
+.box-form-uniq input:focus,
+.box-form-uniq select:focus,
+.box-form-uniq textarea:focus{
+    border-color: var(--alert-01);
+}
+.box-form-uniq input,
+.box-form-uniq select{
+    height: 45px;
+}
+.box-form-uniq div.textarea{
+    min-height: 45px;
+}
+.box-form-uniq input::placeholder,
+.box-form-uniq textarea::placeholder{
+    color: var(--text-black-700);
+    font-size: .85rem;
+    font-weight: 300;
+
+    opacity: .7;
+
+    transition: all .2s ease;
+}
+.box-form-uniq input:focus::placeholder,
+.box-form-uniq textarea:focus::placeholder{
+    opacity: 0;
+    transition: all .2s ease;
+}
+
+/* TextArea */
+.box-form-uniq textarea{
+    height: 150px;
+
+    resize: vertical;
+}
+
+/* Select */
+.box-form-uniq select option:nth-child(1){
+    font-size: .9rem;
+}
+
+/*? Campo Aviso ?*/
+.box-form-uniq .icon-input-atention{
+    font-size: .8rem;
+
+    height: auto;
+
+    top: 85px;
+}
+.box-form-uniq .icon-input-atention .aviso-input{
+    line-height: 14px;
+}
+.box-form-uniq .icon-input-atention i{
+    right: -28px;
+    top: -42px;
+
+    font-size: 1.2rem;
+}
+/*** Mostrando campo de aviso ***/
+.box-form-uniq.disabled .icon-input-atention,
+.box-form-uniq.error .icon-input-atention{
+    display: block;
+}
+
+/*! Campo Bloqueado !*/
+.box-form-uniq.disabled input,
+.box-form-uniq.disabled select,
+.box-form-uniq.disabled textarea,
+.box-form-uniq.disabled div.textarea{
+    background-color: var(--text-black-700);
+
+    color: var(--bg-black-100);
+    font-weight: 500;
+
+    cursor: no-drop;
+}
+.box-form-uniq.disabled .icon-input-atention{
+    color: var(--text-black-700);
+}
+.box-form-uniq.disabled .icon-input-atention i::before{
+    content: '\f47a';
+}
+.box-form-uniq.disabled .icon-input-atention .aviso-input::before{
+    content: 'Campo Bloqueado';
+}
+
+
+/*! Campo Error !*/
+.box-form-uniq.error input,
+.box-form-uniq.error select,
+.box-form-uniq.error textarea{
+    border-color: var(--alert-03);
+}
+.box-form-uniq.error .icon-input-atention{
+    color: var(--alert-03);
+}
+.box-form-uniq.error .icon-input-atention i::before{
+    content: '\F33A';
+}
+
+/*! Campo Success !*/
+.box-form-uniq.success input,
+.box-form-uniq.success select,
+.box-form-uniq.success textarea{
+    border-color: var(--alert-04);
+}
+
+/*? Icon INputs ?*/
+.box-form-uniq .icon-input{
+    top: 53%;
+    right: 10px;
+    transform: translateY(-50%);
+
+    height: 45px;
+
+    font-size: 1.5rem;
+    color: var(--text-black-700);
+}
+.box-form-uniq .icon-input:hover{
+    transform: translateY(-50%) scale(1.1);
+}
+
+.box-form-uniq .calendar i::before{
+    content: '\F1F9';
+}
+
+.box-form-uniq .show-password i::before{
+    content: '\F341';
+}
+.box-form-uniq .show-password.active i::before{
+    content: '\F340';
+}
+
+
+/*** Botão de envio ***/
+.btn-submit .btn-01{
+    border-radius: 8px;
+    font-weight: 500;
+
+    box-shadow: 0px 0px 25px -5px var(--skin-color);
+    
+}
+.btn-submit .btn-01 i{
+    font-size: 1.1rem;
+
+    margin-right: 5px;
+}
+.btn-submit .btn-01 i.bi::before {
+    transform: rotate(-70deg);
+}
+
+/*? Botão Bloqueado ?*/
+.btn-submit .btn-01:disabled{
+    background-color: var(--text-black-700);
+
+    color: var(--bg-black-100);
+    font-weight: 500;
+
+    cursor: no-drop;
+
+    box-shadow: 0px 0px 25px -5px var(--text-black-700);
+}

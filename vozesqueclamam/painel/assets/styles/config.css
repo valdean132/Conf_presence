@@ -1,0 +1,451 @@
+/*? Import Fonts ?*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+
+/*? Configuração de Váriaveis ?*/
+:root{
+    /*? ** Colos ** ?*/
+    /*! Background !*/
+    --bg-black-900: #131220;
+    --bg-black-100: #151422;
+    --bg-black-50: #11101e;
+
+    /*! Text !*/
+    --text-black-100: #ffffff;
+    --text-black-900: #c7c5d3;
+    --text-black-700: #82879b;
+
+    /*! Skins Color !*/
+    --skin-color: #c28400;
+
+    /*! Shadow !*/
+    --box-shadow-color: rgba(48, 46, 77, 0.149);
+
+    /*! Alert !*/
+    --alert-01: #24B6F7;
+    --alert-02: #faba39;
+    --alert-03: #EE4444;
+    --alert-04: #00CC83;
+
+    /*! Font !*/
+    font-size: 100%;
+}
+
+/*? Marcação ?*/
+.border-red{
+    border: 1px solid red;
+}
+
+/*! body !*/
+body, html{
+    width: 100%;
+
+    font-size: 16px;
+
+    -webkit-tap-highlight-color: transparent;
+
+    overflow-x: hidden;
+
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: var(--bg-black-900);
+}
+/*! Scroll !*/
+::-webkit-scrollbar{
+    width: 8px;
+
+    background-color: var(--bg-black-50);
+    
+}
+::-webkit-scrollbar-thumb{
+    width: 100%;
+
+    background-color: var(--skin-color);
+
+    border-radius: 8px;
+}
+*{
+    scrollbar-width: thin;
+    scrollbar-color: var(--skin-color) var(--bg-black-50);
+}
+
+/*! width !*/
+.w-auto{ width: auto; }
+.w100-vw{ width: 100vw; }
+.w100{ width: 100%; }
+.w70{ width: 70%; }
+.w50{ width: 48%; }
+.w40{ width: 40%; }
+.w33{ width: 33.33%; }
+.w30{ width: 30%; }
+.w25{ width: 25%; }
+.w23{ width: 23%; }
+
+/*! height !*/
+.h100-vh{ height: 100vh; }
+.h100{ height: 100%; }
+
+/*! Padding !*/
+.padd-10{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.padd-15{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.padd-30{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.padd-4p{ padding: 4%; }
+.padd-2p{ padding: 2%; }
+.padd-1p{ padding: 1%; }
+
+/*! Margin !*/
+.marg-10{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.marg-b-10{ margin-bottom: 10px; }
+.marg-b-30{ margin-bottom: 30px; }
+.marg-t-10{ margin-top: 10px; }
+.marg-t-30{ margin-top: 30px; }
+
+/*! Alinhamento !*/
+.row{
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+/*! Display Flex !*/
+.display-flex        { display:         flex !important;          }
+.flex-wrap           { flex-wrap:       wrap !important;          }
+.flex-nowrap         { flex-wrap:       nowrap !important;        }
+.flex-column         { flex-direction:  column !important;        }
+.space-between       { justify-content: space-between !important; }
+.space-around        { justify-content: space-around !important;  }
+.justify-end         { justify-content: flex-end !important;      }
+.justify-center      { justify-content: center !important;        }
+.align-items-center  { align-items:     center !important;        }
+.align-items-end     { align-items:     flex-end !important;      }
+.align-items-start   { align-items:     flex-start !important;    }
+.align-self-start    { align-self:      flex-start !important;    }
+.align-content-start { align-content:   flex-start !important;    }
+.display-center      { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*! Display's !*/
+.display-none { display: none;}
+.display-block { display: block;}
+
+/*! Positions !*/
+.position-fixed    { position: fixed;    }
+.position-absolute { position: absolute; }
+.position-relative { position: relative; }
+.position-inherit  { position: inherit;  }
+
+/*! Text !*/
+.text-center      { text-align:     center;     }
+.text-left        { text-align:     left;       }
+.text-right       { text-align:     right;      }
+.text-capitalize  { text-transform: capitalize; }
+.text-uppercase   { text-transform: uppercase;  }
+
+/*! Imagem !*/
+.image-config{
+    object-fit: contain;
+}
+
+/*! Oculto !*/
+.hidden{
+    display: none !important;
+}
+
+/*! Botões !*/
+.btn-01{
+    font-size: 1rem;
+    font-weight: 500;
+
+    padding: 12px 35px;
+
+    border-radius: 40px;
+}
+.btn-02{
+    font-size: .9rem;
+    font-weight: 400;
+
+    padding: 5px 20px;
+
+    border-radius: 20px;
+}
+.btn-01,
+.btn-02{
+    color: var(--text-black-100);
+
+    border: none;
+
+    display: inline-block;
+
+    white-space: nowrap;
+
+    background: var(--skin-color);
+}
+.btn-01:hover,
+.btn-02:hover{
+    transform: scale(1.03);
+}
+
+[data-link]{
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+[data-link].active{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+}
+
+/*! Box Shadow !*/
+.shadow-01{
+    box-shadow: 0px -10px 20px #0a0a12;
+    -webkit-box-shadow: 0px -10px 20px #0a0a12;
+    -moz-box-shadow: 0px -10px 20px #0a0a12;
+}
+.shadow-02{
+    box-shadow: 5px -5px 10px #0f0e19,
+                -5px 5px 10px #0f0e19;
+
+    -webkit-box-shadow: 5px -5px 10px #0f0e19,
+                        -5px 5px 10px #0f0e19;
+                        
+    -moz-box-shadow: 5px -5px 10px #0f0e19,
+                     -5px 5px 10px #0f0e19;
+}
+
+/*! Transição !*/
+.transition{
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+
+/*! Background-01 !*/
+.bg-01{ background-color: var(--bg-black-900); }
+.bg-02{ background-color: var(--bg-black-100); }
+.bg-03{ background-color: var(--bg-black-50); }
+
+/*! Cursores !*/
+.cursor-pointer { cursor: pointer; }
+
+/*! Border Radius !*/
+.border-r-40{ border-radius: 40px; }
+.border-r-20{ border-radius: 20px; }
+.border-r-10{ border-radius: 10px; }
+
+/*! Border !*/
+.border-01{ border: 1px solid #55586470; }
+
+/*! Overflow box !*/
+/*? Na Vertical ?*/
+.overflow-y-auto{
+    overflow-y: auto;
+}
+.overflow-y-auto::-webkit-scrollbar{
+    width: 5px;
+
+    background-color: transparent;
+}
+.overflow-y-auto::-webkit-scrollbar-thumb{
+    background-color: transparent;
+}
+.overflow-y-auto:hover::-webkit-scrollbar-thumb{
+    background-color: var(--skin-color);
+}
+
+/*? Na Horizontal ?*/
+.overflow-x-auto{
+    overflow-x: auto;
+}
+.overflow-x-auto::-webkit-scrollbar{
+    height: 5px;
+
+    background-color: transparent;
+}
+.overflow-x-auto::-webkit-scrollbar-thumb{
+    width: auto;
+    background-color: transparent;
+}
+.overflow-x-auto:hover::-webkit-scrollbar-thumb{
+    background-color: var(--skin-color);
+}
+/*? overflow hidden ?*/
+.overflow-hidden{ overflow: hidden; }
+
+/*! Eventos !*/
+.pointer-events-none{
+    pointer-events: none;
+}
+
+/*! Opacity !*/
+.opacity-0{ opacity: 0;}
+
+/*! Error container B !*/
+b{
+    color: var(--text-black-100);
+}
+main{
+    color: var(--alert-03);
+}
+
+/*! Loading !*/
+/*? Loading 01 ?*/
+.box-loading{
+    background-color: rgba(0, 0, 0, .8);
+    z-index: 1;
+
+}
+.box-loading .spinner{
+    width: 70px;
+    height: 70px;
+}
+.box-loading .spinner .dot{
+    inset: 0;
+
+    animation: spin 1.8s infinite;
+}
+.box-loading .spinner .dot:nth-child(2){
+    animation-delay: 100ms;
+}
+.box-loading .spinner .dot:nth-child(3){
+    animation-delay: 200ms;
+}
+.box-loading .spinner .dot:nth-child(4){
+    animation-delay: 300ms;
+}
+.box-loading .spinner .dot:nth-child(5){
+    animation-delay: 400ms;
+}
+.box-loading .spinner .dot::after{
+    content: '';
+    width: 8px;
+    height: 8px;
+
+    border-radius: 4px;
+
+    background-color: var(--skin-color);
+}
+@keyframes spin {
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/*? Loading 2 ?*/
+.box-loading.loading-02{
+    width: 98%;
+    height: 145%;
+
+    background-color: var(--bg-black-50);
+}
+.box-loading .load-man {
+    -webkit-animation: load-man-travel 1.2s infinite linear;
+            animation: load-man-travel 1.2s infinite linear;
+    background: repeating-linear-gradient(90deg, var(--alert-02), transparent 5%, var(--alert-01) 5%, transparent 35%);
+    height: 10px;
+    left: 5%;
+    margin-top: -5px;
+    position: absolute;
+    top: 50%;
+    /* width: 200px; */
+    width: 90%;
+    /**
+      * Our pseudo elements create the head pieces
+      *
+      * They are near identical minus subtle differences in animation and border
+      * styling
+    */
+    /**
+    * The top head piece
+    */
+    /**
+    * The bottom head piece
+    */ 
+}
+.box-loading .load-man:after, .load-man:before {
+    content: '';
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    border: 25px solid var(--skin-color);
+    border-radius: 100%;
+    margin-top: -25px; 
+}
+.box-loading .load-man:before {
+    --close: -90;
+    -webkit-animation: load-man-chomp 0.35s infinite linear;
+            animation: load-man-chomp 0.35s infinite linear;
+    border-bottom-color: transparent;
+    border-left-color: transparent; 
+}
+.box-loading .load-man:after {
+    --close: 0;
+    -webkit-animation: load-man-chomp 0.35s infinite linear;
+            animation: load-man-chomp 0.35s infinite linear;
+    border-right-color: transparent;
+    border-top-color: transparent; 
+}
+
+@-webkit-keyframes load-man-travel {
+    to {
+        background-position: -200px 0; 
+    } 
+}
+
+@keyframes load-man-travel {
+    to {
+        background-position: -200px 0; 
+    } 
+}
+
+@-webkit-keyframes load-man-chomp {
+    0% {
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); 
+    }
+    50% {
+        -webkit-transform: rotate(calc(var(--close) * 1deg));
+                transform: rotate(calc(var(--close) * 1deg)); 
+    }
+    100% {
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); 
+    } 
+}
+
+@keyframes load-man-chomp {
+    0% {
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); 
+    }
+    50% {
+        -webkit-transform: rotate(calc(var(--close) * 1deg));
+                transform: rotate(calc(var(--close) * 1deg)); 
+    }
+    100% {
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg); 
+    } 
+}
+
+/*! Imagem User !*/
+.views-user-photo .imagem-usuario,
+.views-user-photo .avatar-usuario{
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}

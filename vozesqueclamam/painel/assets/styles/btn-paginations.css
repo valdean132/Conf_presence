@@ -1,0 +1,160 @@
+/*? Estilização de Botões de páginação */
+/*! Configurações gerais */
+.box-pagination{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    justify-content: right;
+
+    padding: 0 5px;
+
+    margin-top: 10px;
+}
+.box-pagination .single-pagination{
+    width: auto;
+    max-width: 290px;
+    height: 30px;
+
+    /* margin-right: 10px; */
+}
+
+.box-pagination .single-pagination .box-wrapper-pagination{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+}
+
+/*! Botão de guia */
+.box-pagination .single-pagination .box-wrapper-pagination .btn-pagination{
+    width: 30px;
+    height: 100%;
+
+    background: var(--bg-black-900);
+
+    box-shadow: 5px -5px 10px #0f0e19, 
+                -5px 5px 10px #0f0e19;
+    -webkit-box-shadow: 5px -5px 10px #0f0e19, 
+                -5px 5px 10px #0f0e19;
+
+    border-radius: 50%;
+    border: 1px solid #55586470;
+
+    /* fill: var(--text-black-100); */
+    color: var(--text-black-700);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+}
+.box-pagination .single-pagination .box-wrapper-pagination .btn-pagination:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+
+    color: var(--skin-color);
+    border-color: var(--skin-color);
+}
+.box-pagination .single-pagination .box-wrapper-pagination .btn-pagination[ap-btndisabled="true"]{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+
+    color: var(--text-black-700);
+    border-color: #55586470;
+
+    cursor: not-allowed;
+}
+.box-pagination .single-pagination .box-wrapper-pagination .btn-pagination i{
+    width: 60%;
+    height: 60%;
+}
+/* .box-pagination .single-pagination .box-wrapper-pagination .btn-pagination.btn-pagination-left{
+    transform: rotate(-90deg);
+}
+.box-pagination .single-pagination .box-wrapper-pagination .btn-pagination.btn-pagination-right{
+    transform: rotate(90deg);
+} */
+
+/*! Botão com os números */
+.box-pagination .single-pagination .box-wrapper-pagination .btn-pagination-numbers{
+    width: auto;
+    max-width: calc(100% - 60px);
+    height: 100%;
+
+    margin: 0 5px;
+    padding: 0 5px;
+
+    border-radius: 30px;
+    border: 1px solid #55586470;
+
+    display: flex;
+
+    background: var(--bg-black-900);
+    color: var(--text-black-100);
+
+    box-shadow: 5px -5px 10px #0f0e19, 
+                -5px 5px 10px #0f0e19;
+    -webkit-box-shadow: 5px -5px 10px #0f0e19, 
+                -5px 5px 10px #0f0e19;
+}
+.box-pagination .single-pagination .box-wrapper-pagination .btn-pagination-numbers .btn-pagination-number{
+    width: 30px;
+    height: 100%;
+    
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    position: relative;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    overflow: hidden;
+
+    transition: all .3s ease;
+}
+.box-pagination .single-pagination .box-wrapper-pagination .btn-pagination-numbers .btn-pagination-number .before{
+
+    width: 100%;
+    height: 100%;
+
+    background: var(--skin-color);
+    box-shadow: 0 0 5px var(--skin-color);
+
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    border-radius: 7px;
+
+    transform: scale(0);
+    -webkit-transform: scale(0);
+
+    transition: transform .5s;
+}
+.box-pagination .single-pagination .box-wrapper-pagination .btn-pagination-numbers .btn-pagination-number:hover{
+    color: var(--skin-color);
+}
+.box-pagination .single-pagination .box-wrapper-pagination .btn-pagination-numbers .btn-pagination-number.active{
+    color: var(--color-fonts_01);
+    transform: scale(1.15);
+    -webkit-transform: scale(1.15);
+
+    cursor: not-allowed;
+}
+.box-pagination .single-pagination .box-wrapper-pagination .btn-pagination-numbers .btn-pagination-number[number='...']{
+    cursor: not-allowed;
+}
+.box-pagination .single-pagination .box-wrapper-pagination .btn-pagination-numbers .btn-pagination-number.active .before{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+}

@@ -1,0 +1,432 @@
+/*! Modal !*/
+.modal-main{
+    z-index: 1000000;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, .05);
+
+    transform: scale(0);
+    -webkit-transform: scale(0);
+}
+.modal-main.active{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+}
+
+.modal-main .contain-modal{
+    width: auto;
+    max-width: 700px;
+    height: auto;
+
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 30px 60px -12px inset, 
+                rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset,
+                rgba(0, 50, 0, 0.25) 0px 30px 60px -12px, 
+                rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+.modal-main .contain-modal .title-box{
+    height: 40px;
+
+    border-bottom: 1px solid #55586470;
+}
+.modal-main .contain-modal .title-box h3{
+    font-size: 1.3rem;
+    font-weight: 400;
+    
+}
+.modal-main .contain-modal .title-box button{
+    background-color: transparent;
+
+    font-size: 1.5rem;
+    color: var(--text-black-700);
+}
+.modal-main .contain-modal .title-box button:hover{
+    color: var(--alert-03);
+}
+
+/*! Navegação Lateral !*/
+nav.nav-lateral{
+    width: 120px;
+
+    left: 0;
+    z-index: 3;
+}
+
+/*? Logo ?*/
+nav.nav-lateral .logo-empresa{
+    height: 100px;
+}
+nav.nav-lateral .logo-empresa img{
+    width: 50%;
+}
+nav.nav-lateral .logo-empresa a:hover img{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+/*? Navegação principal ?*/
+nav.nav-lateral .main-nav{
+    height: calc(100% - 120px);
+
+    margin-top: 20px;
+
+    border-top-right-radius: 20px;
+    border-top: 1px solid #55586470;
+    border-right: 1px solid #55586470;
+}
+
+/*** Navegação principal links ***/
+nav.nav-lateral .main-nav .nav-ul{
+    height: 85%;
+
+    padding-top: 40px;
+}
+nav.nav-lateral .main-nav .nav-ul li{
+    height: 62px;
+
+    padding: 2px 0;
+}
+nav.nav-lateral .main-nav .nav-ul li a{
+    color: var(--text-black-700);
+    font-size: 1.3rem;
+}
+nav.nav-lateral .main-nav .nav-ul li.active a,
+nav.nav-lateral .main-nav .nav-ul li a:hover{
+    color: var(--text-black-900);
+    font-size: 1.4rem;
+}
+nav.nav-lateral .main-nav .nav-ul li a::before{
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 0;
+    width: 4px;
+    
+    background-color: var(--skin-color);
+    
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+nav.nav-lateral .main-nav .nav-ul li.active a::before,
+nav.nav-lateral .main-nav .nav-ul li a:hover::before{
+    height: 100%;
+}
+nav.nav-lateral .main-nav .nav-ul li a span{
+    border-radius: 10px;
+
+    background-color: var(--skin-color);
+
+    color: var(--text-black-100);
+    font-size: .9rem;
+    font-weight: 300;
+
+    left: 100px;
+
+    opacity: 0;
+}
+nav.nav-lateral .main-nav .nav-ul li a span::before{
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 6px;
+    transform: translateY(-50%) rotate(45deg);
+    -webkit-transform: translateY(-50%) rotate(45deg);
+
+    width: 12px;
+    height: 12px;
+
+    border: 6px solid transparent;
+    border-left-color: var(--skin-color);
+    border-bottom-color: var(--skin-color);
+
+    opacity: 0;
+
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+nav.nav-lateral .main-nav .nav-ul li a:hover span,
+nav.nav-lateral .main-nav .nav-ul li a:hover span::before{
+    opacity: 1;
+}
+nav.nav-lateral .main-nav .nav-ul li a:hover span::before{
+    left: -5px;
+}
+
+
+/*** Navegação link para sair do sistema ***/
+nav.nav-lateral .main-nav .btn-exit{
+    height: 15%;
+}
+nav.nav-lateral .main-nav .btn-exit a{
+    width: 50px;
+    height: 50px;
+
+    border-radius: 10px;
+
+    background-color: transparent;
+
+    font-size: 1.5rem;
+    color: var(--skin-color);
+}
+nav.nav-lateral .main-nav .btn-exit a:hover{
+    border-radius: 50%;
+
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+
+    background-color: var(--skin-color);
+    color: var(--text-black-100);
+
+    box-shadow: 5px -5px 26px #0f0e19,
+                -5px 5px 26px #0f0e19;
+}
+
+/*! Header Main !*/
+header.header-main{
+    height: 100px;
+    width: calc(100vw - 120px);
+
+    padding-left: 30px;
+
+    right: 0;
+    top: 0;
+    z-index: 3;
+}
+/*? Title Header ?*/
+header.header-main .title-header{
+    width: 66%;
+}
+header.header-main .title-header h1{
+    color: var(--text-black-100);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+header.header-main .title-header h1 i{
+    color: var(--skin-color);
+}
+
+/*? Botões do Header ?*/
+header.header-main .btns-user-header{
+    width: 32%;
+}
+
+/*** Botões primario  ***/
+header.header-main .btns-user-header .btns-wrapper a{
+    width: 40px;
+    height: 40px;
+
+    font-size: 1.4rem;
+    color: var(--text-black-900);
+
+    border: 1px solid #55586470;
+    border-radius: 20%;
+}
+header.header-main .btns-user-header .btns-wrapper a:hover{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+/*** Área do Usuário ***/
+header.header-main .btns-user-header .nav-user .box-user-btn .img-user{
+    width: 30px;
+    height: 30px;
+
+    border-radius: 8px;
+}
+header.header-main .btns-user-header .nav-user .box-user-btn .avatar-usuario{
+    background-image: url('../images/avatar-01.svg');
+}
+header.header-main .btns-user-header .nav-user .box-user-btn i{
+    color: var(--text-black-900);
+    font-size: 1.3rem;
+}
+header.header-main .btns-user-header .nav-user .box-user-btn h3{
+    color: var(--text-black-100);
+    font-size: 1rem;
+    font-weight: 400;
+}
+header.header-main .btns-user-header .nav-user .box-user-btn.active .row-user{
+    transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+}
+/*** Menu do Usuário ***/
+header.header-main .btns-user-header .nav-user .menu-user{
+    top: 80px;
+
+    width: 200px;
+    max-height: 0;
+
+    overflow: hidden;
+}
+header.header-main .btns-user-header .nav-user .menu-user.active{
+    max-height: 200px;
+}
+header.header-main .btns-user-header .nav-user .menu-user ul{
+    padding: 4%;
+}
+header.header-main .btns-user-header .nav-user .menu-user li a{
+    height: 30px;
+
+    color: var(--text-black-700);
+    font-size: .9rem;
+}
+header.header-main .btns-user-header .nav-user .menu-user li a::before{
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 0;
+    width: 2px;
+    
+    background-color: var(--skin-color);
+    
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+header.header-main .btns-user-header .nav-user .menu-user li.active a,
+header.header-main .btns-user-header .nav-user .menu-user li a:hover{
+    color: var(--text-black-900);
+}
+header.header-main .btns-user-header .nav-user .menu-user li.active a::before,
+header.header-main .btns-user-header .nav-user .menu-user li a:hover::before{
+    height: 100%;
+}
+
+header.header-main .btns-user-header .nav-user .menu-user li a i{
+    font-size: 1.1rem;
+}
+
+/*! Campo Principal !*/
+main.principal{
+    width: calc(100vw - 120px);
+    height: calc(100vh - 120px);
+
+    right: 0;
+    bottom: 0;
+
+    padding-left: 30px;
+}
+
+section:not(.home){
+    padding-right: 30px;
+    padding-bottom: 20px;
+}
+
+/*? Title Box ?*/
+.title-box{
+    display: inline-block;
+
+    margin-bottom: 15px;
+}
+.title-box h3{
+    font-size: 1.1rem;
+    color: var(--text-black-700);
+    font-weight: 300;
+}
+.title-box h3 span{
+    font-size: .8rem;
+    color: var(--skin-color);
+}
+
+/*? Eventos para mostrar os Containers dentro da classe conforme a navegação ?*/
+.show-containers{
+    transform: translateY(100px);
+
+    opacity: 0;
+}
+.show-containers.active{
+    transform: translateY(0);
+
+    opacity: 1;
+}
+
+/*? Menu das Sessões ?*/
+.nav-sections .title-menu-section{
+    height: 70px;
+    
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-black-700);
+
+    border-bottom: 1px solid rgba(85, 88, 100, .439);
+    border-right: 1px solid rgba(85, 88, 100, .439);
+}
+.nav-sections li{
+    height: 70px;
+}
+.nav-sections li:not(:last-child){
+    margin-bottom: 5px;
+}
+.nav-sections li a{
+    color: var(--text-black-900);
+    font-size: 1.2rem;
+}
+.nav-sections li a::before,
+.nav-sections li a::after{
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+
+    transition: all .3s ease;
+}
+.nav-sections li a::before{
+    width: 5px;
+    height: 0;
+
+    z-index: 2;
+
+    background-color: var(--skin-color);
+
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.nav-sections li a::after{
+    width: 0;
+    height: 100%;
+
+    background-color: var(--bg-black-50);
+}
+.nav-sections li.active a::before,
+.nav-sections li:hover a::before{
+    height: 100%;
+}
+.nav-sections li.active a::after,
+.nav-sections li:hover a::after{
+    width: 100%;
+}
+
+
+.nav-sections li a i,
+.nav-sections li a span{
+    z-index: 2;
+}
+.nav-sections li a i{
+    color: var(--text-black-700);
+}
+.nav-sections li.active a i,
+.nav-sections li:hover a i{
+    color: var(--text-black-900);
+}
+
+/*? Eventos para mostrar os Containers dentro da classe conforme a navegação ?*/
+.show-containers{
+    transform: translateY(100px);
+    -webkit-transform: translateY(100px);
+
+    opacity: 0;
+}
+.show-containers.active{
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+
+    opacity: 1;
+}
