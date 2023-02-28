@@ -166,6 +166,7 @@ function viewsAllTables(){
         order: '`data_hora` ASC',
         where: 'presence = 0',
         qtdPages: 8,
+        search: '[data-search="all-presence"]',
         events: () => {
             modalAdd();
         },

@@ -22,6 +22,27 @@
     transform: scale(1.1);
 }
 
+/*! Campo de pesquisa !*/
+.campo-pesquisa{
+    min-width: 320px;
+    min-height: auto !important;
+}
+.campo-pesquisa input{
+    padding-right: 45px;
+
+    margin-right: 10px;
+}
+.campo-pesquisa .icone-pesquisa{
+    top: 50%;
+    right: 195px;
+    transform: translateY(-50%);
+
+    font-size: 1.1rem;
+}
+.campo-pesquisa .selectMultiple{
+    height: 45px;
+}
+
 /*! Modelo de Tabela 01 !*/
 .m-table-01{
     min-width: 1100px;

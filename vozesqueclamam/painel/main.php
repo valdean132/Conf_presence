@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH_D; ?>styles/config.css"> <!-- CSS Config -->
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH_D; ?>styles/bootstrap-icons.css"> <!-- CSS Bootstrap Icons -->
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH_D; ?>styles/toastify.min.css"> <!-- CSS notification -->   
+    <link rel="stylesheet" href="<?php echo INCLUDE_PATH_D; ?>styles/input-tags.css"> <!-- CSS notification -->   
 
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH_D; ?>styles/table.css"> <!-- CSS Tabela -->
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH_D; ?>styles/btn-paginations.css"> <!-- CSS Botões de paginação -->

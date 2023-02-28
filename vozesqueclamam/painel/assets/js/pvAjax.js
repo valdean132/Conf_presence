@@ -12,6 +12,7 @@ const pvAjax = (o) => {
         container: '',
         containTable: '',
         idTable: '',
+        search: '',
         theme: 1,
         url: '',
         type: 'POST',

@@ -663,6 +663,173 @@ const validateInput = (inputThis, boxInputThis, valueInput, adcional = null) => 
     }
 }
 
+const tagsInputs = (tagsInputs, removeTag) => {
+    tagsInputs.each(function(){ // pegando os selects
+        var options = $(this).find('option'); // Pegando os options do selects especificos
+        
+        $(this).prepend('<option value=""></option>')
+
+        // Criando divs de apoio
+        var div = $('<div />').addClass('selectMultiple');
+        var active = $('<div />');
+        var list = $('<ul />');
+        var placeholder = $(this).data('placeholder');
+        var xTag = removeTag ? '<i></i>' : '';
+        
+        var span = $('<span />').text(placeholder).appendTo(active); // Adicionando placeholder para informação
+
+
+        active.append($('<div><div/></div>').addClass('arrow')); // Criando botão de ativar e desativar lista de opção e seta
+        div.append(active).append(list); // Adcionando listas de options
+    
+        if(options.length <= 0){
+            list.append($('<div />').html(`<a href="${include_path}settings">Adicione os itens</a>`));
+        }else{
+            options.each(function () { // pegando options e adcionando nas listas
+                var text = $(this).text();
+                if(text.length >= 1){
+                    // $(this).parent('select').find('option').prop('selected', false);
+
+                    if ($(this).is(':selected')) { // verificando se há um select em option e deixando definido como tag
+
+                        active.append($('<a />').html('<em>' + text + '</em>'+xTag));
+                        span.addClass('hide');
+                    } else {
+                        list.append($('<li />').html(text));
+                    }
+                }
+            });
+        }
+        
+        
+        $(this).wrap(div); // envolvendo select em um div central criada
+    
+        $(document).on('click','.selectMultiple ul li',function (e) { // função para remover item da lista e colocar no input tags
+            var select = $(this).parent().parent();
+            var li = $(this);
+            if (!select.hasClass('clicked')) {
+                select.addClass('clicked');
+                li.prev().addClass('beforeRemove');
+                li.next().addClass('afterRemove');
+                li.addClass('remove');
+
+                if(!select.find('select').is('[multiple]')){ // removendo tag selecionada e adcionando a cliocada cada caso não seja multiple
+                    removeTags(select.find('div a'));
+                }
+
+                setTimeout(()=>{
+                    var a = $('<a />').addClass('notShown').html('<em>' + li.text() + '</em>'+xTag).hide().appendTo(select.children('div')); // criando tag
+    
+                    a.slideDown(400, function () { // adcionando animação
+                        setTimeout(function () {
+                            a.addClass('shown');
+                            select.children('div').children('span').addClass('hide');
+                            select.find('option:contains(' + li.text() + ')').prop('selected', true); // Selecionando option que foi clicado.
+                        }, 500);
+                    });
+                    setTimeout(function () { // adcionando animações
+                        if (li.prev().is(':last-child')) {
+                            li.prev().removeClass('beforeRemove');
+                        }
+                        if (li.next().is(':first-child')) {
+                            li.next().removeClass('afterRemove');
+                        }
+                        setTimeout(function () {
+                            li.prev().removeClass('beforeRemove');
+                            li.next().removeClass('afterRemove');
+                        }, 200);
+        
+                        li.slideUp(400, function () {
+                            li.remove();
+                            select.removeClass('clicked');
+    
+                            if(select.find('ul li').length <= 0){ // Verificando se não existe mais lista
+                                notUl = $('<div />').html(`<a href="${include_path}settings">Adicione mais itens</a>`)
+                                                    .addClass('notShown')
+                                                    .appendTo(select.find('ul'));
+                                
+                                notUl.slideDown(400, function(){ // Adicionando aviso para adicinar mais itens
+                                    notUl.addClass('show');
+                                    setTimeout(function () {
+                                        notUl.removeClass();
+                                    }, 400);
+                                });
+                            }
+                        });
+                    }, 600);
+                }, 700)
+            }
+        });
+        
+        $(document).on('click','.selectMultiple > div a',function(e) { // removendo tag clicada
+            if(removeTag){
+                removeTags($(this));
+            }
+        });
+
+        function removeTags(tag){ // função para remover tag conforme click e conforme select:multiple
+            var select = tag.parent().parent();
+            var self = tag;
+            notUl = select.find('ul div').addClass('remove')
+            self.removeClass().addClass('remove');
+            select.addClass('open');
+            setTimeout(function () {
+                self.addClass('disappear');
+                setTimeout(function () { // adcionando animações
+                    self.animate({
+                        width: 0,
+                        height: 0,
+                        padding: 0,
+                        margin: 0
+                    }, 300, function () {
+                        var li = $('<li />').text(self.children('em').text()).addClass('notShown').appendTo(select.find('ul'));
+                        // console.log(select.find('ul li').length)
+                        if(select.find('ul li').length > 1){ // Verificando há mais de uma li para remover a div de aviso
+                            li.slideDown(400, function () { // Adcionando lista removido da tag
+                                li.addClass('show');
+                                setTimeout(function () {
+                                    select.find('option:contains(' + self.children('em').text() + ')').prop('selected', false); // removendo tag
+                                    if (!select.find('option:selected').length || select.find('option:selected').text().length <= 0) {
+                                        select.children('div').children('span').removeClass('hide');
+                                    }
+                                    li.removeClass();
+                                }, 400);
+                            });
+                        }else{
+                            notUl.slideUp(400, function () {
+                                notUl.remove(); // Removendo aviso de adicinar mais itens
+    
+                                li.slideDown(400, function () { // Adcionando lista removido da tag
+                                    li.addClass('show');
+                                    setTimeout(function () {
+                                        select.find('option:contains(' + self.children('em').text() + ')').prop('selected', false); // removendo tag
+                                        if (!select.find('option:selected').length || select.find('option:selected').text().length <= 0) {
+                                            select.children('div').children('span').removeClass('hide');
+                                        }
+                                        li.removeClass();
+                                    }, 400);
+                                });
+                            });
+                        }
+                        self.remove();
+                    });
+                }, 300);
+            }, 400);
+        }
+        
+        $(this).parent().parent().parent().find('div .arrow, div span').on('click', function (e) { // removendo e adcionando open
+            console.log('aqui')
+            if($(this).parent().parent().hasClass('open')){
+                $(this).parent().parent().removeClass('open');
+            }else{
+                $('.selectMultiple').removeClass('open');
+                $(this).parent().parent().addClass('open');
+            }
+        });
+    });
+}
+tagsInputs($('.campo-pesquisa select'), false);
+
 /* Função para encaminhar copia para área de transferencia */
 const copyTranf = (copyText) => {
     let TextArea = $('.copy-transf');
