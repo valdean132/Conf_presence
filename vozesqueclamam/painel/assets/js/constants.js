@@ -818,7 +818,6 @@ const tagsInputs = (tagsInputs, removeTag) => {
         }
         
         $(this).parent().parent().parent().find('div .arrow, div span').on('click', function (e) { // removendo e adcionando open
-            console.log('aqui')
             if($(this).parent().parent().hasClass('open')){
                 $(this).parent().parent().removeClass('open');
             }else{

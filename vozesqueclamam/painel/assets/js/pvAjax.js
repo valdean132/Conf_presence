@@ -53,11 +53,15 @@ const pvAjax = (o) => {
             data: {
                 table: t.table,
                 order: t.order,
-                pg: t.pagination,
+                pg: 1,
                 qtgPg: t.qtdPages,
                 where: t.where
             }
         });
+
+        if(t.search != ''){
+            searchItem(t, gi);
+        }
 
         
     }else{
@@ -65,6 +69,43 @@ const pvAjax = (o) => {
         console.log(gi);
     }
 
+}
+
+function searchItem(t, gi){
+    $(t.search).keyup(function(){
+        let sV = $(this).val();
+        let sC = $(this).attr('data-column');
+
+        if(sV != ''){
+            t.whereS = " AND `"+sC+"` = '"+ sV +"'";
+        }else{
+            t.whereS = '';
+        }
+
+        console.log({
+            table: t.table,
+            order: t.order,
+            pg: t.pagination,
+            qtgPg: t.qtdPages,
+            where: t.where
+        })
+
+        aPagination({
+            container: t.container,
+            url: t.url,
+            type: t.type,
+            theme: t.theme,
+            gi: gi,
+            t: t,
+            data: {
+                table: t.table,
+                order: t.order,
+                pg: t.pagination,
+                qtgPg: t.qtdPages,
+                where: t.where+t.whereS
+            }
+        });
+    })
 }
 
 function aPagination(aj) {
@@ -81,6 +122,7 @@ function aPagination(aj) {
         dataType:'json',
         async: true,
         success: function(data){
+            console.log(aj.data)
             if(!aj.theme){
                 theme({
                     theme: aj.theme,

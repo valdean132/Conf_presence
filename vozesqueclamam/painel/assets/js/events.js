@@ -3,6 +3,7 @@
 $(function(){ // Depois de carregamento de página
     toggleMenuUser(); // Chamada de função para mostrar menu de usuário
     menuSectionsShow(); // Chamada de função para mostrar containers conforme navegação de sessão
+    searchTag(); // Função para definir a coluna do banco de dados
 });
 
 
@@ -133,4 +134,17 @@ function modalAdd(){
         }, 100);
     }
 
+}
+
+// Funação para selecionar o que puxar do banco de dados
+function searchTag(){
+    $('.campo-pesquisa').each(function(){
+        let thisBox = $(this);
+        let thisInput = thisBox.find('input');
+        let thisSelect = thisBox.find('select');
+
+        thisInput.keyup(function(){
+            $(this).attr('data-column', thisSelect.val());
+        });
+    });
 }

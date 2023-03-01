@@ -164,7 +164,7 @@ function viewsAllTables(){
         containTable: '[data-table="all-presence"]',
         idTable: 'all-presence',
         order: '`data_hora` ASC',
-        where: 'presence = 0',
+        where: '`presence` = 0',
         qtdPages: 8,
         search: '[data-search="all-presence"]',
         events: () => {

@@ -9,11 +9,11 @@
         $where = isset($_POST['where']) ? 'WHERE '. $_POST['where'] : '';
         $paginaAtual = (int)$_POST['pg'];
 
-        $qtdPages = ceil(count(Painel::selectAll($tabela, $order)) / $porPagina);
+        $qtdPages = ceil(count(Painel::selectAll($tabela, $order, $where)) / $porPagina);
 
-        if($qtdPages < (int)$_POST['pg']){
-            $paginaAtual = ceil(count(Painel::selectAll($tabela, $order)) / $porPagina);
-        }
+        // if(($qtdPages < (int)$_POST['pg'])){
+        //     $paginaAtual = ceil(count(Painel::selectAll($tabela, $order, $where)) / $porPagina);
+        // }
 
 
         $result = [
