@@ -11,9 +11,9 @@
 
         $qtdPages = ceil(count(Painel::selectAll($tabela, $order, $where)) / $porPagina);
 
-        // if(($qtdPages < (int)$_POST['pg'])){
-        //     $paginaAtual = ceil(count(Painel::selectAll($tabela, $order, $where)) / $porPagina);
-        // }
+        if(($qtdPages < (int)$_POST['pg'])){
+            $paginaAtual = ceil(count(Painel::selectAll($tabela, $order, $where)) / $porPagina);
+        }
 
 
         $result = [

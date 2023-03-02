@@ -19,8 +19,12 @@
     define('BASE_DIR', __DIR__); // Base para as acesso das pastas
 
     // Conexão com o banco de dados
-    define('HOST', 'localhost');
-    define('USER', 'root');
-    define('USERNAME','');
-    define('DATABASE', 'vozesqueclamam_painel');
+    define('HOST', '50.116.87.180');
+    define('USER', 'valdea89_vQC');
+    define('USERNAME','TH)*w75-%TEc');
+    define('DATABASE', 'valdea89_vozesqueclamam_painel');
+    // define('HOST', 'localhost');
+    // define('USER', 'root');
+    // define('USERNAME','');
+    // define('DATABASE', 'vozesqueclamam_painel');
 ?>
