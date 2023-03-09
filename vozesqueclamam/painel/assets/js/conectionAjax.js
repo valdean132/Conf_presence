@@ -119,10 +119,15 @@ $(function(){
     if(urlAtual == 'profile'){
         viewsInputUser(); // Chamando função para mostrar os dados do usuário logado
     }
+    if(urlAtual == 'home' || urlAtual == ''){
+        viewsAllTables(); // Função para mostrar os dados da tabela em geral
+    }
+    if(urlAtual == 'presence-conf'){
+        viewsAllTablesConf(); // Função para mostrar os dados da tabela em geral
+    }
 
     // Funções Gerais
     viewsPhotoUser(); // Função para mosrar a imagem ou o avatar do usuário.
-    viewsAllTables(); // Função para mostrar os dados da tabela em geral
 });
 
 
@@ -163,10 +168,27 @@ function viewsAllTables(){
         container: '.pagination',
         containTable: '[data-table="all-presence"]',
         idTable: 'all-presence',
-        order: '`data_hora` ASC',
+        order: '`nome` ASC',
         where: '`presence` = 0',
         qtdPages: 8,
-        // search: '[data-search="all-presence"]',
+        events: () => {
+            modalAdd();
+        },
+        styles: {
+            'justify-content': 'center'
+        }
+    });
+}
+function viewsAllTablesConf(){
+    pvAjax({
+        url: `${include_path}assets/ajax/pagination.php`,
+        table: 'tb_sys_site.inscricao',
+        container: '.pagination',
+        containTable: '[data-table="conf-presence"]',
+        idTable: 'conf-presence',
+        order: '`nome` ASC',
+        where: 'presence = 1',
+        qtdPages: 8,
         events: () => {
             modalAdd();
         },

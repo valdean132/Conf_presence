@@ -48,7 +48,9 @@
                 if(file_exists('assets/pages/'.$url[0].'.php')){
                     // Se A página existir
                     if($url[0] == 'home')
-                        return ['bi-ui-checks', 'painel de controle', $url[0]];
+                        return ['ui-checks', 'painel de controle', $url[0]];
+                    if($url[0] == 'presence-conf')
+                        return ['person-lines-fill', 'Confirmados', $url[0]];
 
                     if($url[0] == 'profile')
                         return ['person-lines-fill', 'Meus Dados', $url[0]];
@@ -59,7 +61,7 @@
                 }
             }else{
                 // Caso não exista nada na URL
-                return ['bi-ui-checks', 'painel de controle', 'home'];
+                return ['ui-checks', 'painel de controle', 'home'];
             }
         }
 

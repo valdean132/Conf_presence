@@ -55,6 +55,12 @@
                         <span class="position-absolute w-auto padd-4p pointer-events-none transition">Inicial</span>
                     </a>
                 </li>
+                <li class="<?php echo Diretorios::selecionadoMenu('presence-conf'); ?>">
+                    <a href="presence-conf" class="menu-nav display-center position-relative padd-15 transition w100 h100">
+                        <i class="bi bi-person-lines-fill"></i>
+                        <span class="position-absolute w-auto padd-4p pointer-events-none transition">Confirmados</span>
+                    </a>
+                </li>
             </ul><!-- Links de Navegação Principal -->
             <div class="btn-exit w100 display-center">
                 <a href="<?php echo INCLUDE_PATH; ?>?loggout=<?php echo INCLUDE_PATH_ATUAL; ?>" class="display-center position-relative padd-15 transition"><i class="bi bi-box-arrow-right"></i></a>

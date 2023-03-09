@@ -122,7 +122,6 @@ function aPagination(aj) {
         dataType:'json',
         async: true,
         success: function(data){
-            console.log(aj.data)
             if(!aj.theme){
                 theme({
                     theme: aj.theme,
@@ -165,12 +164,19 @@ function theme(th){
     $(th.t.containTable).append('<div></div>');
     var container = $(th.t.containTable).find('div:nth-child(2)');
 
+    // if(r.d.registros.length == 1){
+    //     container.append(elementsTable({
+    //         c: th.t.idTable,
+    //         lD: r.d.registros.length
+    //     } ))
+    // }
+
     for(var i = 0; i < r.d.registros.length; i++){
         container.append(elementsTable({
             c: th.t.idTable,
             lD: r.d.registros.length,
             d: r.d.registros[i]
-        } ))
+        }))
     }
     
     if(r.d.qtdPages < th.t.pagination)
@@ -200,10 +206,56 @@ function theme(th){
     }
 
     th.t.events();
+    confPresence(th.t, th.gi);
     c.css(th.t.styles);
 
 
     result = th.r.table;
+}
+
+function confPresence(t, gi){
+    $('[data-presenceconf]').click(function(){
+        var idPresence = $(this).attr('data-presenceconf');
+
+        $.ajax({
+            url: include_path+'assets/ajax/conf-presence.php',
+            type: 'POST',
+            data: 'id-not='+idPresence,
+            dataType:'json',
+            async: true,
+            success: function(data){
+                if(data.type == 'error'){
+                    boxAvisos(data.type, data.msg, data.span, true, suport);
+                }else{
+                    boxAvisos(data.type, data.msg, data.span, false);
+                }
+
+                $('#'+gi+' .box-wrapper-pagination').remove();
+
+                aPagination({
+                    container: t.container,
+                    url: t.url,
+                    type: t.type,
+                    theme: t.theme,
+                    gi: gi,
+                    t: t,
+                    data: {
+                        table: t.table,
+                        order: t.order, 
+                        pg: 1,
+                        qtgPg: t.qtdPages,
+                        where: t.where
+                    }
+                });
+            },
+            error: function(xhr) {
+                result = xhr
+                console.log(xhr.responseText)
+            }
+        });
+
+        return false;
+    });
 }
 
 function theme01(q, p, c){
@@ -264,7 +316,7 @@ function theme01(q, p, c){
 
 function elementsTable(r){
     var copyElement;
-    if(r.c == 'all-presence'){
+    if(r.c == 'all-presence' || r.c == 'conf-presence'){
         if(r.lD > 0){
             copyElement = `
                 <div class="tr w100 display-flex space-between">
@@ -288,15 +340,21 @@ function elementsTable(r){
                             type-table="${Encripta('tb_sys_admin.contato')}"
                             type-btn="modal"
                             class="btn-action-table view shadow-01 border-r-10 display-center transition" 
-                            title="Ver mais sobre ${r.d.nome.split(' ')[0]}"><i class="bi bi-eye"></i></a>
-                        <a href="#" data-remove='${r.d.id}' class="btn-action-table confirme shadow-01 border-r-10 display-center transition" title="Confirmar Presença"><i class="bi bi-check2-all"></i></a>
+                            title="Ver mais sobre ${r.d.nome.split(' ')[0]} ${r.d.nome.split(' ')[1]}"><i class="bi bi-eye"></i></a>
+                `;
+                if(r.c == 'all-presence'){
+                    copyElement += `
+                        <a href="" data-presenceConf='${r.d.id}' class="btn-action-table confirme shadow-01 border-r-10 display-center transition" title="Confirmar Presença"><i class="bi bi-check2-all"></i></a>
+                    `;
+                }
+                copyElement += `
                     </div>
                 </div>
             `;
         }else{
             copyElement = `
                 <div class="no_result">
-                    <p>Não há novos contatos...</p>
+                    <p>Não há Presenças para confirmar...</p>
                 </div>
             `;
         }
